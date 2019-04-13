@@ -39,7 +39,7 @@ before_install:
 
 install:
 
-# Instalar PortAudiosudo apt-get install libasound-dev
+# Instalar PortAudio
   - sudo apt-get install libasound-dev
   - wget http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz
   - tar -xzvf  pa_stable_v190600_20161030.tgz
@@ -60,6 +60,7 @@ install:
   - cmake .. -DSKIP_ACE=ON -DCREATE_LIB_MATH=ON -DCREATE_GUIS=ON -DCREATE_OPTIONAL_CARRIERS=ON -DENABLE_yarpcar_mjpeg=ON -DCREATE_DEVICE_LIBRARY_MODULES=ON  -DENABLE_yarpmod_portaudio=ON # configure
   - make -j$(nproc) # Compile
   - sudo make install && sudo ldconfig
+  - cd ..
   - cd ..
 
 
