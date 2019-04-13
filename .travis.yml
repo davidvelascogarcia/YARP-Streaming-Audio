@@ -64,7 +64,7 @@ install:
 # Tareas a ejecutar antes de nuestra prueba
 
 before_script:
-  - cd YARP-Streaming-Audio
+  - cd davidvelascogarcia/YARP-Streaming-Audio
   - cd programs
   - cd linux
   - cd sender
