@@ -46,7 +46,7 @@ install:
   - cd portaudio
   - ./configure && make
   - sudo make install
-  - cd
+  - cd ..
 
 # Instalar YARP
 
@@ -59,12 +59,13 @@ install:
   - cd yarp && mkdir build && cd build
   - cmake .. -DSKIP_ACE=ON -DCREATE_LIB_MATH=ON -DCREATE_GUIS=ON -DCREATE_OPTIONAL_CARRIERS=ON -DENABLE_yarpcar_mjpeg=ON -DCREATE_DEVICE_LIBRARY_MODULES=ON  -DENABLE_yarpmod_portaudio=ON # configure
   - make -j$(nproc) # Compile
-  - sudo make install && sudo ldconfig && cd
+  - sudo make install && sudo ldconfig
+  - cd ..
+
 
 # Tareas a ejecutar antes de nuestra prueba
 
 before_script:
-  - cd davidvelascogarcia/YARP-Streaming-Audio
   - cd programs
   - cd linux
   - cd sender
