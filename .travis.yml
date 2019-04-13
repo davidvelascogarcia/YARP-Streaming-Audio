@@ -39,6 +39,15 @@ before_install:
 
 install:
 
+# Instalar PortAudiosudo apt-get install libasound-dev
+  - sudo apt-get install libasound-dev
+  - wget http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz
+  - tar -xzvf  pa_stable_v190600_20161030.tgz
+  - cd portaudio
+  - ./configure && make
+  - sudo make install
+  - cd
+
 # Instalar YARP
 
   - sudo apt install build-essential git
@@ -51,18 +60,6 @@ install:
   - cmake .. -DSKIP_ACE=ON -DCREATE_LIB_MATH=ON -DCREATE_GUIS=ON -DCREATE_OPTIONAL_CARRIERS=ON -DENABLE_yarpcar_mjpeg=ON -DENABLE_yarpmod_portaudio # configure
   - make -j$(nproc) # Compile
   - sudo make install && sudo ldconfig && cd
-
-
-
-
-# Instalar PortAudiosudo apt-get install libasound-dev
-  - sudo apt-get install libasound-dev
-  - wget http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz
-  - tar -xzvf  pa_stable_v190600_20161030.tgz
-  - cd portaudio
-  - ./configure && make
-  - sudo make install
-  - cd
 
 # Tareas a ejecutar antes de nuestra prueba
 
