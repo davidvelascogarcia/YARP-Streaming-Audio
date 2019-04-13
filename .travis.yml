@@ -57,7 +57,7 @@ install:
   - sudo apt install libedit-dev
   - git clone https://github.com/robotology/yarp.git
   - cd yarp && mkdir build && cd build
-  - cmake .. -DSKIP_ACE=ON -DCREATE_LIB_MATH=ON -DCREATE_GUIS=ON -DCREATE_OPTIONAL_CARRIERS=ON -DENABLE_yarpcar_mjpeg=ON -DENABLE_yarpmod_portaudio # configure
+  - cmake .. -DSKIP_ACE=ON -DCREATE_LIB_MATH=ON -DCREATE_GUIS=ON -DCREATE_OPTIONAL_CARRIERS=ON -DENABLE_yarpcar_mjpeg=ON -DCREATE_DEVICE_LIBRARY_MODULES=ON  -DENABLE_yarpmod_portaudio=ON # configure
   - make -j$(nproc) # Compile
   - sudo make install && sudo ldconfig && cd
 
