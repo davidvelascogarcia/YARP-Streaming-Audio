@@ -69,6 +69,7 @@ install:
 before_script:
   - cd programs
   - cd linux
+  - cd yarpStreamingAudio
   - cd sender
   - mkdir build
   - cd build

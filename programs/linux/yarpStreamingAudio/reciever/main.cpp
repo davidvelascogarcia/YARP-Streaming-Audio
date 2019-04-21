@@ -33,11 +33,11 @@ int main(int argc, char *argv[]) {
 
     cout<<" Iniciando red YARP"<<endl;
     Network yarp;
-    cout<<" Abriendo puerto de recepción con nombre /reciever"<<endl;
+    cout<<" Abriendo puerto de recepción con nombre /yarpStreamingAudio/audio:i"<<endl;
     BufferedPort<Sound> p;
-    p.open("/receiver");
+    p.open("/yarpStreamingAudio/audio:i");
     cout<<" Conectando puerto emisor y recptor"<<endl;
-    Network::connect("/sender", "/receiver");
+    Network::connect("/yarpStreamingAudio/audio:o", "/yarpStreamingAudio/audio:i");
     cout<<" Configurando receptor de audio"<<endl;
     Property conf;
     conf.put("device","portaudio");

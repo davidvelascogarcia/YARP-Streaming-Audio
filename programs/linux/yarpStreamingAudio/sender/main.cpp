@@ -39,9 +39,9 @@ int main(int argc, char *argv[]) {
 
     cout<<"Iniciando red yarp..."<<endl;
     Network yarp;
-    cout<<"Abriendo puerto emisor con nombre /sender"<<endl;
+    cout<<"Abriendo puerto emisor con nombre /yarpStreamingAudio/audio:o"<<endl;
     Port p;
-    p.open("/sender");
+    p.open("/yarpStreamingAudio/audio:o");
     cout<<"Iniciando dispositivo emisor..."<<endl;
     Property conf;
     conf.put("device","portaudio");
